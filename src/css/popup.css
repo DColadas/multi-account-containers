@@ -138,49 +138,13 @@ table {
 }
 
 /* Color and icon helpers */
-[data-identity-color="blue"] {
-  --identity-tab-color: #37adff;
-  --identity-icon-color: #37adff;
+.usercontext-icon {
+  --identity-tab-color: currentColor; 
+  --identity-icon-color: currentColor; 
 }
 
-[data-identity-color="turquoise"] {
-  --identity-tab-color: #00c79a;
-  --identity-icon-color: #00c79a;
-}
-
-[data-identity-color="green"] {
-  --identity-tab-color: #51cd00;
-  --identity-icon-color: #51cd00;
-}
-
-[data-identity-color="grey"] {
-  /* Only used for the edit panel */
+.choose-color-icon {
   --identity-icon-color: #616161;
-}
-
-[data-identity-color="yellow"] {
-  --identity-tab-color: #ffcb00;
-  --identity-icon-color: #ffcb00;
-}
-
-[data-identity-color="orange"] {
-  --identity-tab-color: #ff9f00;
-  --identity-icon-color: #ff9f00;
-}
-
-[data-identity-color="red"] {
-  --identity-tab-color: #ff613d;
-  --identity-icon-color: #ff613d;
-}
-
-[data-identity-color="pink"] {
-  --identity-tab-color: #ff4bda;
-  --identity-icon-color: #ff4bda;
-}
-
-[data-identity-color="purple"] {
-  --identity-tab-color: #af51f5;
-  --identity-icon-color: #af51f5;
 }
 
 [data-identity-icon="fingerprint"] {

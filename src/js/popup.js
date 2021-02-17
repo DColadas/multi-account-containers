@@ -680,7 +680,7 @@ Logic.registerPanel(P_CONTAINERS_LIST, {
           <div class="menu-icon">
             <div class="usercontext-icon"
               data-identity-icon="${identity.icon}"
-              data-identity-color="${identity.color}">
+              style="color:${identity.color}">
             </div>
           </div>
           <span class="menu-text">${identity.name}</span>
@@ -944,8 +944,8 @@ Logic.registerPanel(OPEN_NEW_CONTAINER_PICKER, {
       td.innerHTML = Utils.escaped`          
         <div class="menu-icon">
           <div class="usercontext-icon"
-            data-identity-icon="${identity.icon}"
-            data-identity-color="${identity.color}">
+                      data-identity-icon="${identity.icon}"
+            style="color:${identity.color}">
           </div>
         </div>
         <span class="menu-text">${identity.name}</span>`;
@@ -1020,8 +1020,8 @@ Logic.registerPanel(MANAGE_CONTAINERS_PICKER, {
       td.innerHTML = Utils.escaped`          
         <div class="menu-icon hover-highlight">
           <div class="usercontext-icon"
-            data-identity-icon="${identity.icon}"
-            data-identity-color="${identity.color}">
+                      data-identity-icon="${identity.icon}"
+            style="color:${identity.color}">
           </div>
         </div>
         <span class="menu-text">${identity.name}</span>
@@ -1159,8 +1159,8 @@ Logic.registerPanel(REOPEN_IN_CONTAINER_PICKER, {
         td.innerHTML = Utils.escaped`          
         <div class="menu-icon hover-highlight">
           <div class="usercontext-icon"
-            data-identity-icon="${identity.icon}"
-            data-identity-color="${identity.color}">
+                      data-identity-icon="${identity.icon}"
+            style="color:${identity.color}">
           </div>
         </div>
         <span class="menu-text">${identity.name}</span>`;
@@ -1211,8 +1211,8 @@ Logic.registerPanel(ALWAYS_OPEN_IN_PICKER, {
       td.innerHTML = Utils.escaped`          
         <div class="menu-icon hover-highlight">
           <div class="usercontext-icon"
-            data-identity-icon="${identity.icon}"
-            data-identity-color="${identity.color}">
+                      data-identity-icon="${identity.icon}"
+            style="color:${identity.color}">
           </div>
         </div>
         <span class="menu-text">${identity.name}</span>`;
@@ -1362,7 +1362,7 @@ Logic.registerPanel(P_CONTAINER_EDIT, {
   initializeRadioButtons() {
     const colorRadioTemplate = (containerColor) => {
       return Utils.escaped`<input type="radio" value="${containerColor}" name="container-color" id="edit-container-panel-choose-color-${containerColor}" />
-     <label for="edit-container-panel-choose-color-${containerColor}" class="usercontext-icon choose-color-icon" data-identity-icon="circle" data-identity-color="${containerColor}">`;
+     <label for="edit-container-panel-choose-color-${containerColor}" class="usercontext-icon choose-color-color" data-identity-icon="circle" style="color:${containerColor}">`;
     };
     const colors = ["blue", "turquoise", "green", "yellow", "orange", "red", "pink", "purple"];
     const colorRadioFieldset = document.getElementById("edit-container-panel-choose-color");
@@ -1374,9 +1374,18 @@ Logic.registerPanel(P_CONTAINER_EDIT, {
       colorRadioFieldset.appendChild(templateInstance);
     });
 
+    /*
+      // Custom color button
+      const customColor = document.createElement("div");
+      customColor.classList.add("radio-container");
+      // eslint-disable-next-line no-unsanitized/property
+      customColor.innerHTML = colorRadioTemplate(containerColor);
+      colorRadioFieldset.appendChild(customColor);
+    */
+
     const iconRadioTemplate = (containerIcon) => {
       return Utils.escaped`<input type="radio" value="${containerIcon}" name="container-icon" id="edit-container-panel-choose-icon-${containerIcon}" />
-     <label for="edit-container-panel-choose-icon-${containerIcon}" class="usercontext-icon choose-color-icon" data-identity-color="grey" data-identity-icon="${containerIcon}">`;
+     <label for="edit-container-panel-choose-icon-${containerIcon}" class="usercontext-icon choose-color-icon" data-identity-icon="${containerIcon}">`;
     };
     const icons = ["fingerprint", "briefcase", "dollar", "cart", "vacation", "gift", "food", "fruit", "pet", "tree", "chill", "circle", "fence"];
     const iconRadioFieldset = document.getElementById("edit-container-panel-choose-icon");

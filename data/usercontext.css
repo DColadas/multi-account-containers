@@ -21,6 +21,7 @@
 }
 
 #userContext-icons[data-identity-color=""] {
+  /* TODO deal with this */
   display: none;
 }
 
